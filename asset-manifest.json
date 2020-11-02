@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/SnakeAds-AdminPanel/static/js/main.56b0d973.chunk.js",
+    "main.js.map": "/SnakeAds-AdminPanel/static/js/main.56b0d973.chunk.js.map",
+    "runtime-main.js": "/SnakeAds-AdminPanel/static/js/runtime-main.82117662.js",
+    "runtime-main.js.map": "/SnakeAds-AdminPanel/static/js/runtime-main.82117662.js.map",
+    "static/js/2.c0309004.chunk.js": "/SnakeAds-AdminPanel/static/js/2.c0309004.chunk.js",
+    "static/js/2.c0309004.chunk.js.map": "/SnakeAds-AdminPanel/static/js/2.c0309004.chunk.js.map",
+    "index.html": "/SnakeAds-AdminPanel/index.html",
+    "static/js/2.c0309004.chunk.js.LICENSE.txt": "/SnakeAds-AdminPanel/static/js/2.c0309004.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.82117662.js",
+    "static/js/2.c0309004.chunk.js",
+    "static/js/main.56b0d973.chunk.js"
+  ]
+}
