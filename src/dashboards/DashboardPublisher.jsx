@@ -1,9 +1,13 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import axios from 'axios';
 
-import { Card, Box, Typography, Divider, Zoom, Dialog, DialogContent, Select, MenuItem } from '@material-ui/core';
+
+// Core
+import { Card, Box, Typography, Divider, Zoom, Dialog, DialogContent, Select, MenuItem, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { compressArray } from '../helpers/objectCounter.helper';
 import AppBar from '../AppBar/AppBar';
 
+// Styles
 import { useDashboardStyles } from './Dashboard.style';
 
 const DashboardPublisher = () => {
@@ -12,24 +16,29 @@ const DashboardPublisher = () => {
   const [activePublisher, setActivePublisher] = useState({ id: '', name: '' });
   const [ads, setAds] = useState(null);
 
+  const handlePublisherChange = value => {
+    setActivePublisher(value);
+  };
+
   const handleClickUpdate = user => {
     axios.get(`http://localhost:3000`)
     .then(res => {
       const assets = res.data;
       let publisherAds = assets.filter(ad => ad.Record.publisherId === user);
-      setAds(publisherAds);
+      const sortedAds = compressArray(publisherAds);
+      setAds(sortedAds);
     })
   };
 
     useEffect(() => {
         handleClickUpdate(activePublisher.id);
-  }, [activePublisher.id]);
+  }, [activePublisher.id !== '']);
 
   return (
     <Fragment>
       <AppBar onRefresh={() => handleClickUpdate} />
       {activePublisher.id !== '' && (
-        <Zoom in={activePublisher.id}>
+        <Zoom in={activePublisher.id !== ''}>
           <Card classes={{ root: classes.card }}>
             <Typography variant="h6" color="secondary" paragraph>
               {`Publisher ${activePublisher.name}`}
@@ -37,12 +46,25 @@ const DashboardPublisher = () => {
 
             <Divider classes={{ root: classes.divider }} />
 
-            <Box>
-              {ads && ads.map(ad => (
-                <Typography variant="body1" color="secondary">
-                  {`AssetID: ${ad.Record.ID} -  Advertisement id: ${ad.Record.advertisementId}`}
-                </Typography>
-              ))}
+            <Box width="100%">
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Advertisement ID</TableCell>
+                    <TableCell>Clicks</TableCell>
+                    <TableCell>Advertiser</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {ads.map(ad => (
+                    <TableRow key={ad.id}>
+                      <TableCell>{ad.id}</TableCell>
+                      <TableCell>{ad.clicks}</TableCell>
+                      <TableCell>{ad.advertiserId}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </Box>
           </Card>
         </Zoom>
@@ -58,7 +80,7 @@ const DashboardPublisher = () => {
               className={classes.select}
               displayEmpty
               value={activePublisher}
-              onChange={event => setActivePublisher(event.target.value)}
+              onChange={event => handlePublisherChange(event.target.value)}
             >
               <MenuItem value="" disabled>Select..</MenuItem>
               <MenuItem value={{ id: 'pub1_10/2020', name: 'Jane' }}>Jane</MenuItem>

@@ -4,9 +4,9 @@ export const useDashboardStyles = makeStyles(theme => ({
     card: {
         backgroundColor: theme.palette.primary.main,
         width: '100%',
-        padding: theme.spacing(4),
+        padding: theme.spacing(6),
         maxWidth: 1280,
-        minHeight: 700,
+        minHeight: 'max-content',
     },
 
     divider: {
