@@ -28,4 +28,10 @@ export const useDashboardStyles = makeStyles(theme => ({
     select: {
         width: '50%',
     },
+
+    avatar: {
+        width: 25,
+        height: 25,
+        marginRight: theme.spacing(2),
+    },
 }));

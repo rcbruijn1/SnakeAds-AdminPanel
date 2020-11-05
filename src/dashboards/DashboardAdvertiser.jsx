@@ -1,11 +1,18 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { Card, Box, Typography, Divider, Zoom, Dialog, DialogContent, Select, MenuItem, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
+// Core
+import { Card, Box, Typography, Divider, Zoom, Dialog, DialogContent, Select, MenuItem, Table, TableHead, TableRow, TableCell, TableBody, Avatar } from '@material-ui/core';
 import { compressArray } from '../helpers/objectCounter.helper';
 import AppBar from '../AppBar/AppBar';
 
+// Style
 import { useDashboardStyles } from './Dashboard.style';
+
+// Assets
+import coolblue_logo from '../assets/coolblue.svg';
+import tweakers_logo from '../assets/tweakers.jpg';
+import daisycon_logo from '../assets/daisycon.png';
 
 const DashboardAdvertiser = () => {
   const classes = useDashboardStyles();
@@ -30,7 +37,7 @@ const DashboardAdvertiser = () => {
     useEffect(() => {
         handleClickUpdate(activeAdvertiser.id);
   }, [activeAdvertiser.id !== '']);
-
+  console.log(ads);
     return (
       <Fragment>
         <AppBar onRefresh={() => handleClickUpdate} />
@@ -86,9 +93,24 @@ const DashboardAdvertiser = () => {
                 onChange={event => handleAdvertiserChange(event.target.value)}
               >
                 <MenuItem value="" disabled>Select..</MenuItem>
-                <MenuItem value={{ id: 'adver1_10/2020', name: 'Bob' }}>Bob</MenuItem>
-                <MenuItem value={{ id: 'adver2_10/2020', name: 'Mary' }}>Mary</MenuItem>
-                <MenuItem value={{ id: 'adver3_10/2020', name: 'John' }}>John</MenuItem>
+                <MenuItem value={{ id: 'adver1_10/2020/Coolbue', name: 'Bob' }}>
+                  <Avatar src={coolblue_logo} className={classes.avatar} />
+                  <Typography variant="body1" color="secondary">
+                    Bob
+                  </Typography>
+                  </MenuItem>
+                <MenuItem value={{ id: 'adver2_10/2020/Tweakers', name: 'Mary' }}>
+                  <Avatar src={tweakers_logo} className={classes.avatar} />
+                  <Typography variant="body1" color="secondary">
+                    Mary
+                  </Typography>Mary
+                </MenuItem>
+                <MenuItem value={{ id: 'adver3_10/2020/Daisycon', name: 'John' }}>
+                  <Avatar src={daisycon_logo} className={classes.avatar} />
+                  <Typography variant="body1" color="secondary">
+                    John
+                  </Typography>
+              </MenuItem>
               </Select>
           </DialogContent>
         </Dialog>
