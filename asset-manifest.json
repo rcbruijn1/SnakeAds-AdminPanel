@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.js": "/SnakeAds-AdminPanel/static/js/main.2ded89d8.chunk.js",
-    "main.js.map": "/SnakeAds-AdminPanel/static/js/main.2ded89d8.chunk.js.map",
+    "main.js": "/SnakeAds-AdminPanel/static/js/main.322734a0.chunk.js",
+    "main.js.map": "/SnakeAds-AdminPanel/static/js/main.322734a0.chunk.js.map",
     "runtime-main.js": "/SnakeAds-AdminPanel/static/js/runtime-main.82117662.js",
     "runtime-main.js.map": "/SnakeAds-AdminPanel/static/js/runtime-main.82117662.js.map",
-    "static/js/2.060c02d5.chunk.js": "/SnakeAds-AdminPanel/static/js/2.060c02d5.chunk.js",
-    "static/js/2.060c02d5.chunk.js.map": "/SnakeAds-AdminPanel/static/js/2.060c02d5.chunk.js.map",
+    "static/js/2.b2a393d7.chunk.js": "/SnakeAds-AdminPanel/static/js/2.b2a393d7.chunk.js",
+    "static/js/2.b2a393d7.chunk.js.map": "/SnakeAds-AdminPanel/static/js/2.b2a393d7.chunk.js.map",
     "index.html": "/SnakeAds-AdminPanel/index.html",
-    "static/js/2.060c02d5.chunk.js.LICENSE.txt": "/SnakeAds-AdminPanel/static/js/2.060c02d5.chunk.js.LICENSE.txt"
+    "static/js/2.b2a393d7.chunk.js.LICENSE.txt": "/SnakeAds-AdminPanel/static/js/2.b2a393d7.chunk.js.LICENSE.txt",
+    "static/media/coolblue.b8406ff9.svg": "/SnakeAds-AdminPanel/static/media/coolblue.b8406ff9.svg",
+    "static/media/daisycon.6ef79237.png": "/SnakeAds-AdminPanel/static/media/daisycon.6ef79237.png"
   },
   "entrypoints": [
     "static/js/runtime-main.82117662.js",
-    "static/js/2.060c02d5.chunk.js",
-    "static/js/main.2ded89d8.chunk.js"
+    "static/js/2.b2a393d7.chunk.js",
+    "static/js/main.322734a0.chunk.js"
   ]
 }
