@@ -41,8 +41,5 @@ export const colorsDefault = {
       primary: colorsDefault.secondary.main,
       secondary: colorsDefault.grey[800],
     },
-    container: {
-      default: colorsDefault.primary.main,
-    },
   };
   

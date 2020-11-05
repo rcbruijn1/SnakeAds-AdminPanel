@@ -18,7 +18,7 @@ const DashboardAdvertiser = () => {
   };
 
   const handleClickUpdate = user => {
-    axios.get(`http://localhost:3000`)
+    axios.get(`https://proxy.server7.omega2.nl/`)
     .then(res => {
       const assets = res.data;
       let advertiserAds = assets.filter(ad => ad.Record.advertiserId === user);
@@ -44,24 +44,30 @@ const DashboardAdvertiser = () => {
               <Divider classes={{ root: classes.divider }} />
 
               <Box width="100%">
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Advertisement ID</TableCell>
-                      <TableCell>Clicks</TableCell>
-                      <TableCell>Publisher</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {ads.map(ad => (
-                      <TableRow key={ad.id}>
-                        <TableCell>{ad.id}</TableCell>
-                        <TableCell>{ad.clicks}</TableCell>
-                        <TableCell>{ad.publisherId}</TableCell>
+                {ads.length > 0 ? (
+                  <Table>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Advertisement ID</TableCell>
+                        <TableCell>Clicks</TableCell>
+                        <TableCell>Publisher</TableCell>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                    </TableHead>
+                    <TableBody>
+                      {ads.map(ad => (
+                        <TableRow key={ad.id}>
+                          <TableCell>{ad.id}</TableCell>
+                          <TableCell>{ad.clicks}</TableCell>
+                          <TableCell>{ad.publisherId}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <Typography variant="body1" color="secondary">
+                    No data to display yet!
+                  </Typography>
+                )}
               </Box>
             </Card>
           </Zoom>
