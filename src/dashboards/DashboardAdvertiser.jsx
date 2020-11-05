@@ -103,7 +103,7 @@ const DashboardAdvertiser = () => {
                   <Avatar src={tweakers_logo} className={classes.avatar} />
                   <Typography variant="body1" color="secondary">
                     Mary
-                  </Typography>Mary
+                  </Typography>
                 </MenuItem>
                 <MenuItem value={{ id: 'adver3_10/2020/Daisycon', name: 'John' }}>
                   <Avatar src={daisycon_logo} className={classes.avatar} />
